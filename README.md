@@ -10,6 +10,7 @@ Webpage interface functionality:
 - See results list
 
 Backend functionality:
-- JeffHoogland's pypair, using NetworkX for matching
+- [JeffHoogland's pypair](https://github.com/JeffHoogland/pypair), using [NetworkX](https://networkx.github.io/) for matching
 - Flask
 - Heroku
+- [Spice API](https://github.com/Utagai/spice)
