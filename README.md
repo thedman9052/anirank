@@ -10,6 +10,6 @@ Webpage interface functionality:
 - See results list
 
 Backend functionality:
-- Implement mattkrick's EdmondsBlossom javascript function
-- Port JeffHoogland's pypair to javascript using EdmondsBlossom instead of networkx
-- Port my own anirank python program to javascript
+- JeffHoogland's pypair, using NetworkX for matching
+- Flask
+- Heroku
