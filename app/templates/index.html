@@ -1,16 +1,13 @@
-<html>
-	<head>
-		<title>Anirank</title>
-	</head>
-	<body>
-		<h1>{{ anime1.title }}</h1>
-		<h2>{{ anime1.english }}</h2>
-		<img src={{ anime1.image_url }}>
-		<h3>{{ anime1.dates[0] }}
-		<h1> VS </h1>
-		<h1>{{ anime2.title }}</h1>
-		<h2>{{ anime2.english }}</h2>
-		<img src={{ anime2.image_url }}>
-		<h3>{{ anime2.dates[0] }}
-	</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+	<h1>{{ anime1.title }}</h1>
+	<h2>{{ anime1.english }}</h2>
+	<img src={{ anime1.image_url }}>
+	<h3>{{ anime1.dates[0] }}
+	<h1> VS </h1>
+	<h1>{{ anime2.title }}</h1>
+	<h2>{{ anime2.english }}</h2>
+	<img src={{ anime2.image_url }}>
+	<h3>{{ anime2.dates[0] }}
+{% endblock %}

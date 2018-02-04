@@ -11,3 +11,7 @@ Jinja2==2.10
 click==6.7
 MarkupSafe==1.0
 spice-api==1.0.4
+networkx==1.11
+decorator==4.0.11
+Flask-WTF==0.14.2
+WTForms==2.1
