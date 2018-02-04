@@ -1,11 +1,11 @@
 from flask import render_template, flash, redirect, url_for
 from app import app
-from app.forms import LoginForm
+from app.forms import LoginForm, OptionsForm
 import spice_api
 import random
 
-@app.route('/')
-@app.route('/index')
+@app.route('/', methods=['GET', 'POST'])
+@app.route('/index', methods=['GET', 'POST'])
 def index():
 
 	anime1 = {
@@ -26,8 +26,11 @@ def index():
 	anime1 = spice_api.search_id(random.choice(anime_ids),spice_api.get_medium("anime"),creds)
 	anime2 = spice_api.search_id(random.choice(anime_ids),spice_api.get_medium("anime"),creds)
 	'''
-	return render_template('index.html', title='Home', anime1=anime1, anime2=anime2)
-	
+	form = OptionsForm()
+	if form.validate_on_submit():
+		flash('Options selected!')
+		return redirect(url_for('index'))
+	return render_template('index.html', title='Home', anime1=anime1, anime2=anime2, form=form)
 	'''
 	>>> import datetime
 	>>> dt=time.strptime('2016-07-05', '%Y-%m-%d')
