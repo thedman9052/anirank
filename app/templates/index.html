@@ -1,15 +1,24 @@
 {% extends "base.html" %}
+{% import "bootstrap/utils.html" as utils %}
 
-{% block content %}
-	{% include '_options.html' %}
+{% block app_content %}
+	<!--{% include '_options.html' %}-->
 
-	<h1>{{ anime1.title }}</h1>
-	<h2>{{ anime1.english }}</h2>
-	<img src={{ anime1.image_url }}>
-	<h3>{{ anime1.dates[0] }}</h3>
-	<h1> VS </h1>
-	<h1>{{ anime2.title }}</h1>
-	<h2>{{ anime2.english }}</h2>
-	<img src={{ anime2.image_url }}>
-	<h3>{{ anime2.dates[0] }}</h3>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-4">
+				{% with anime = anime1 %}
+					{% include '_animePoster.html' %}
+				{% endwith %}
+			</div>
+			<div class="col-sm-1">
+				<h1>VS</h1>
+			</div>
+			<div class="col-sm-4">
+				{% with anime = anime2 %}
+					{% include '_animePoster.html' %}
+				{% endwith %}
+			</div>
+		</div>
+	</div>
 {% endblock %}

@@ -1,23 +1,19 @@
-<html>
-    <head>
-      <title>Anirank</title>
-    </head>
-    <body>
-        {% if user %}		
-		<div>{{ user }}</div>
-		{% else %}
-		<div><a href="{{ url_for('login') }}">Log in to MAL to begin</a></div>
-		{% endif %}
-        <hr>
+{% extends 'bootstrap/base.html' %}
+
+{% block title %}
+	Anirank
+{% endblock %}
+
+{% block content %}
+	<div class="container">
 		{% with messages = get_flashed_messages() %}
 		{% if messages %}
-		<ul>
 			{% for message in messages %}
-			<li>{{ message }}</li>
+			<div class="alert alert-info" role="alert">{{ message }}</div>
 			{% endfor %}
-		</ul>
 		{% endif %}
 		{% endwith %}
-        {% block content %}{% endblock %}
-    </body>
-</html>
+		{# application content needs to be provided in the app_content block #}
+		{% block app_content %}{% endblock %}
+	</div>
+{% endblock %}
