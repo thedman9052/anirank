@@ -1,4 +1,10 @@
-<h1>{{ anime.title }}</h1>
-<h2>{{ anime.english }}</h2>
-<img src={{ anime.image_url }}>
-<h3>{{ anime.date }}</h3>
+<div class="text-center">
+	<h1>{{ anime.title }}</h1>
+	{% if anime.title.replace(" ","").lower() != anime.english.replace(" ","").lower() %}
+		<h3>{{ anime.english }}</h3>
+	{% else %}
+		<h3><br></h3>
+	{% endif %}
+	<a href="https://myanimelist.net/anime/{{ anime.id }}" target="_blank"><img src={{ anime.image_url }}></a>
+	<h3>{{ anime.dateFormat }}</h3>
+</div>
