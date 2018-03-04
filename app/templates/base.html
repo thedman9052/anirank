@@ -22,8 +22,8 @@
 	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
 	<script>
 		$( "#clickme" ).click(function() {
-			$( "#showdown" ).fadeIn( "slow", function() {
-			});
+			$( "#showdown" ).fadeIn("fast");
+			$( "#clickme" ).slideUp("fast")
 		});
 	</script>
 {% endblock %}
