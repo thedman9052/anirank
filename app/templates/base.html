@@ -17,3 +17,13 @@
 		{% block app_content %}{% endblock %}
 	</div>
 {% endblock %}
+
+{% block scripts %}
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+	<script>
+		$( "#clickme" ).click(function() {
+			$( "#showdown" ).fadeIn( "slow", function() {
+			});
+		});
+	</script>
+{% endblock %}

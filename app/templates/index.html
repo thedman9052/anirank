@@ -3,22 +3,29 @@
 
 {% block app_content %}
 	<!--{% include '_options.html' %}-->
-
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-sm-4">
-				{% with anime = anime1 %}
-					{% include '_animePoster.html' %}
-				{% endwith %}
+<div id="clickme"> Click </div>
+<div id="showdown" style="display:none;">
+	<div class="row" style="background-color:green">
+		<div class="col-md-3 col-md-offset-2" style="background-color:red">
+			{% with anime = anime1 %}
+				{% include '_animePoster.html' %}
+			{% endwith %}
+			<div class="text-center">
+				<button type="button" class="btn btn-success btn-lg" value="1">✔ Vote!</button>
 			</div>
-			<div class="col-sm-1">
-				<h1 class="text-center">VS</h1>
-			</div>
-			<div class="col-sm-4">
-				{% with anime = anime2 %}
-					{% include '_animePoster.html' %}
-				{% endwith %}
+		</div>
+		<div class="col-md-2">
+			<h1 class="text-center">VS</h1>
+		</div>
+		<div class="col-md-3" style="background-color:red">
+			{% with anime = anime2 %}
+				{% include '_animePoster.html' %}
+			{% endwith %}
+			<div class="text-center">
+				<button type="button" class="btn btn-success btn-lg" value="2">✔ Vote!</button>
 			</div>
 		</div>
 	</div>
+</div>
+	
 {% endblock %}
